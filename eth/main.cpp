@@ -210,7 +210,11 @@ int main(int argc, char** argv)
     ChainParams chainParams;
     string privateChain;
 
+#if ETH_MINIUPNPC
     bool upnp = true;
+#else
+    bool upnp = false;
+#endif
     WithExisting withExisting = WithExisting::Trust;
 
     /// Networking params.
